@@ -1,0 +1,52 @@
+﻿<md-toolbar id="tool-bar" layout="row">
+
+    <md-button ng-click="body.toggle()" aria-label="Menu">
+        <md-icon style="color: #fff; font-size: 25px;"> dehaze </md-icon>
+    </md-button>
+
+    <img hide-xs layout-margin src="./img/IHM-Logo.png" style="width: 100px; align-self: center" align="middle">
+
+    <h3 class="titulo" style="align-self:center">
+        <span hide show-gt-xs><b>{{body.$state.$current.nomeTela}}</b></span>
+    </h3>
+    
+    <label hide-xs style="align-self: center; font-size: 14px;">
+        <span style="align-self: center">Usuário: </span>
+        {{usuarioLogado.nomeUsuario}}
+    </label>
+    
+    <md-button ng-click="logInPopup()" >
+        <md-icon style="color: #fff; font-size: 25px;"> people </md-icon>
+    </md-button>
+      
+    <img hide-xs layout-margin src="./img/IHM-Logo.png" style="width: 100px; align-self: center" align="middle">
+      
+</md-toolbar>
+
+<div cg-busy="Waiting" class="container" data-layout="row" data-flex>
+    <md-sidenav class="md-whiteframe-4dp" md-component-id="left">
+
+        <md-list ng-click="body.toggle()">
+
+            <md-list-item ng-repeat="m in body.menu" class="bottom-border">
+                <md-button ng-click="body.go(m.name)">
+                    <!--<md-icon class="menu-icon"> {{m.icon}} </md-icon>-->                    
+                    <md-icon ng-if="!m.svg" > {{m.icon}} </md-icon>
+                    <md-icon ng-if="m.svg" md-svg-src="{{m.icon}}"> </md-icon>
+                    {{m.menu}}
+                </md-button>
+            </md-list-item>
+
+        </md-list>
+
+    </md-sidenav>
+
+        <md-content flex id="content" class="aplication-background" >
+
+            <div cg-busy="Waiting" data-layout="row" data-layout-align="end center" data-flex>
+            </div>
+
+            <div data-ui-view ></div>
+
+        </md-content>
+</div>

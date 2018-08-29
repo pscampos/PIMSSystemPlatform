@@ -1,0 +1,47 @@
+﻿<md-dialog aria-label="LogIn.PopUp">
+
+    <form role='form' name='formLogInController' novalidate="" ng-cloak>
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>LogIn</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="btnCloseLogIn(ev)">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content layout="column" layout-margin>
+            <div layout="column">
+                <div layout-margin>
+                    <label class="text-menu">LogIn: </label>
+                    <md-input-container class="md-block" flex="100">
+                        <input name="usuario" ng-model="usuario" required>
+                        <div ng-messages="formLogInController.usuario.$error">
+                            <div ng-message="required">Campo Obrigatório!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-margin>
+                    <label class="text-menu">Senha: </label>
+                    <md-input-container class="md-block" flex="100">
+                        <input type="password" name="senha" ng-model="senha" ng-keypress="checkIfEnterKeyWasPressed($event)" required>
+                        <div ng-messages="formLogInController.senha.$error">
+                            <div ng-message="required">Campo Obrigatório!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout-gt-xs="row" layout="column">
+            <md-button class="md-raised md-primary" ng-disabled="formLogInController.$invalid" ng-click="btnLogIn($event)">
+                LogIn
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="btnLogOut($event)">
+                LogOut
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

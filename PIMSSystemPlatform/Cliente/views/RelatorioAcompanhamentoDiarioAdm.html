@@ -1,0 +1,94 @@
+﻿<md-content layout="column" flex ng-controller="RelatorioAcompanhamentoDiarioAdmController as RelatorioAcompanhamentoDiarioAdmCtr">
+    <md-card>
+        <md-table-container class="layout-margin">
+
+            <div flex-gt-xs>
+                <label class="text-menu">Relatório de Acompanhamento Diário: </label>
+                <md-select ng-model="RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario" ng-change="selectedRelatorioChange()" md-no-asterisk>
+                    <md-option ng-repeat="Relatorio in RelatorioAcompanhamentoDiarioModel.RelatorioAcompanhamentoDiario" ng-value="Relatorio" ng-selected="RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Name == Relatorio.Name">
+                        {{Relatorio.Name}}
+                    </md-option>
+                </md-select>
+            </div>
+
+        </md-table-container>
+        <form role='form' name='frmRelatorioAcompanhamentoDiarioModel' novalidate="">
+
+            <md-table-container class="layout-margin">
+
+                <div layout="column" flex="100" flex-xs="100">
+                    <div layout="column" class="aplication-region">
+
+                        <div>
+                            <label class="text-menu">Nome: </label>
+                            <md-input-container class="md-block">
+                                <input name="selectedDeposito_Deposito_Codigodeposito" class="text-data" ng-model="RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Name" required>
+                                <div ng-messages="frmRelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Name.$error">
+                                    <div ng-message="required">Campo Obrigatório!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                        <div layout-align="end center" layout="row">
+                            <span class="text-menu">Adicionar Tags</span>
+                            <div>
+                                <md-button class="md-icon-button md-primary" ng-click="RelatorioAcompanhamentoDiarioAdmCtr.addAttribute()">
+                                    <md-icon class="material-icons">add</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <md-table-container>
+                                <table md-table>
+                                    <thead md-head>
+                                        <tr md-row>
+                                            <th md-column>
+                                                <span>Atributo</span>
+                                            </th>
+                                            <th md-column ng-repeat="Attributes in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Attributes track by $index">
+                                                <input class="input-liga-alvo-grid" ng-model="Attributes.Name" autofocus required />
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                        <tr md-row>
+                                            <td md-cell class="notSelect">
+                                                <span>Tag</span>
+                                            </td>
+                                            <td md-cell ng-repeat="Attributes in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Attributes track by $index" class="notSelect">
+                                                <input class="input-liga-alvo-grid" ng-model="Attributes.Value" autofocus required />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </md-table-container>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+
+                <div layout-gt-sm="row" layout="column" layout-align-gt-sm="space-between start" layout-align="none none">
+                    <div layout-gt-sm="row" layout="column">
+                        <md-button class="md-raised md-primary md-button-transform-none" ng-click="RelatorioAcompanhamentoDiarioAdmCtr.newReport()">
+                            New
+                        </md-button>
+                        <md-button class="md-raised md-primary md-button-transform-none" ng-click="RelatorioAcompanhamentoDiarioAdmCtr.saveReport()">
+                            Save
+                        </md-button>
+                    </div>
+                    <div layout-gt-sm="row" layout="column">
+                        <md-button class="md-raised md-primary md-button-transform-none" ng-click="RelatorioAcompanhamentoDiarioAdmCtr.excludeReport()">
+                            Delete
+                        </md-button>
+                    </div>
+                </div>
+            </md-table-container>
+
+        </form>
+
+    </md-card>
+</md-content>

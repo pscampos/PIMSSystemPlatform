@@ -1,0 +1,453 @@
+﻿@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       /*url(/css/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/css/MaterialIcons-Regular.woff) format('woff'),*/
+       url(../css/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+html, body{
+    font-family: 'Roboto', sans-serif;
+    /*font-size: 16px;*/
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.titulo{
+    margin: auto;
+    font-weight: 500;
+}
+
+md-list-item > button{
+    width:100%;
+    text-align:left !important;
+}
+
+#content{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+}
+
+#tool-bar{
+    background-color: #316794;
+}
+
+.tabela-container{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-right: 25px;
+}
+
+@media (max-width: 600px){
+    .tabela-container{
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+}
+
+.tabela{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: table;
+    border-color: grey;
+}
+
+.tabela th{
+    font-size: 12px;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.54);
+    padding: 10px;
+}
+
+.tabela td{
+    font-size: 13px;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: rgba(0,0,0,0.87);
+    padding: 3px;
+    border-top: 1px solid #ddd;
+}
+
+.tabela tr:hover:not(thead){
+    background-color: #EEEEEE;
+}
+
+.tabela tr{
+    display: table-row;
+}
+
+.tabela thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.tabela tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.input-container{
+    display: inline-block;
+    position: relative;
+    padding: 2px;
+    margin: 18px 0;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+.data-hora{
+    margin-bottom: -50px;
+    margin-top: -20px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+#apt-salvar{
+    margin-left: 20px;
+}
+
+.bottom-border{
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-icon{
+    margin-right: 15px;
+    background-color: #929292;
+    border-radius: 50%;
+    padding: 5px;
+    /*border: 1px solid black;*/
+    color: white;
+}
+
+.scroll{
+    overflow: scroll;
+}
+
+ /** Date Picker */ 
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin-left: 15px; }
+
+
+  /* Radio */
+  .radioButtondemoBasicUsage body {
+  padding: 20px; }
+
+.radioButtondemoBasicUsage hr {
+  margin-left: -20px;
+  opacity: 0.3; }
+
+.radioButtondemoBasicUsage md-radio-group {
+  width: 150px; }
+
+.radioButtondemoBasicUsage p:last-child {
+  padding-bottom: 50px; }
+
+.radioButtondemoBasicUsage [ng-controller] {
+  padding: 0 20px; }
+
+.radioButtondemoBasicUsage .radioValue {
+  margin-left: 5px;
+  color: #0f9d58;
+  font-weight: bold;
+  padding: 5px; }
+
+.radioButtondemoBasicUsage md-icon {
+  margin: 0 20px 20px;
+  width: 128px;
+  height: 128px; }
+
+.radioButtondemoBasicUsage .ipsum {
+  color: saddlebrown;
+  font-size: 0.9em; }
+
+.input-liga-alvo-grid {
+    width: 300px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+input[type=number].input-liga-alvo-grid::-webkit-inner-spin-button,
+input[type=number].input-liga-alvo-grid::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-grid{ 
+    /*width: 58px;*/
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+input[type=number].input-grid::-webkit-inner-spin-button,
+input[type=number].input-grid::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.label-align{    
+    margin-bottom: 34px !important;
+}
+.label-combo-align{    
+    margin-bottom: 9px !important;
+}
+.text-menu{
+    font-weight: bold;
+}
+.text-data{
+    font-weight: normal;
+}
+
+.aplication-background{
+    padding-bottom: 5px;
+    background-color:#DEE7EE;
+    /*background-color: #eff5ff;*/
+}
+
+.application-region{
+    /*border:1px solid black;*/
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+/*Estilos do grid de resultado, comparando com a liga alvo*/
+.table-value-blue{
+    color: darkblue !important;
+    /*background-color: black;*/
+}
+
+.table-value-green{
+    color: green !important;
+    /*background-color: green;*/
+}
+
+.table-value-red{
+    color: red !important;
+    /*background-color: red;*/
+}
+
+/*Tool Tip*/
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button,
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+
+.tooltip-materiaprima{
+    font-size:medium !important;
+}
+
+/* Classe para não selecionar celula do grid que tem tooltip*/
+.notSelect {
+    outline: none;
+}
+
+
+
+/* Classe Dialog */
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0; }
+
+/*.table-aling-center{
+    align: "center";
+}*/
+
+.listNone{
+    list-style-type: none;
+    padding-left: 5px !important;
+}
+
+.table-title-align{
+    text-align: center !important;
+}
+
+.md-button-transform-none {    
+    text-transform: none !important;/*For Lower case use lowercase*/
+}
+
+md-checkbox.md-checked .md-icon {
+    background-color: #316794;
+}
+
+md-input-container{
+    margin: 0px !important;
+}
+
+md-toolbar.dashboard-toolbar {
+    background-color: #e8effc;
+    border-radius: 3px 3px 0 0;
+    color: #272727;
+    max-height: 36px;
+    min-height: 36px;
+}
+
+.dashboard-toolbar > .md-toolbar-tools {
+    max-height: 36px;
+    min-height: 36px;
+}
+
+md-toolbar.dashboard-toolbar.md-toolbar-tools {
+    min-height: 36px;
+    max-height: 36px;
+}
+
+.dashboard-menu {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+      0 13px 19px 2px rgba(0, 0, 0, 0.14),
+      0 5px 24px 4px rgba(0, 0, 0, 0.12);
+  width: 256px;
+}
+
+.dashboard-menu-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  padding: 16px 0 0 16px;
+  position: relative;
+  transition: background 0.15s linear;
+  width: auto;
+}
+
+.dashboard-menu-item:hover, .dashboard-menu-item:focus {
+  background-color: rgb(238, 238, 238);
+}
+
+.dashboard-menu-item.selected {
+  color: rgb(16, 108, 200);
+}
+
+.dashboard-content {
+    background-color: #f8f8ff;
+    border-radius: 0 0 3px 3px;
+}
+
+table span{
+    white-space:nowrap; 
+}
+
+.custom-canvas{
+    width: 100% !important;
+    /*width: 500px;*/
+	height: 100% !important;
+    /*height: auto !important;*/ 
+}
+
+.whiteframedemoBasicClassUsage {
+  /* For breakpoint `-xs` */
+  /* For breakpoint `-sm` */
+  /* For breakpoint `-md` */
+  /* For breakpoint `-gt-md` */ }
+  .whiteframedemoBasicClassUsage md-whiteframe {
+    background: #fff;
+    margin: 30px;
+    height: 100px; }
+  @media (max-width: 599px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+      margin: 7px;
+      height: 50px;
+      background-color: #c8e4fa; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+      font-size: 0.4em; } }
+  @media (min-width: 600px) and (max-width: 959px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+      margin: 20px;
+      height: 75px; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+      font-size: 0.6em; } }
+  @media (min-width: 960px) and (max-width: 1279px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+      margin: 20px;
+      height: 90px;
+      background-color: #fcddde; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+      font-size: 0.9em; } }
+  @media (min-width: 1280px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+      margin: 25px;
+      height: 100px;
+      background-color: #F2FCE2; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+      font-size: 1.0em; } }

@@ -1,0 +1,111 @@
+﻿<md-content layout="column" flex ng-controller="RelatorioAcompanhamentoDiarioController as RelatorioAcompanhamentoDiarioCtr">
+    <md-card>
+        <md-table-container class="layout-margin">
+
+            <div flex-gt-xs>
+                <label class="text-menu">Relatório de Acompanhamento Diário: </label>
+                <md-select ng-model="RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario" ng-change="RelatorioAcompanhamentoDiarioCtr.selectedRelatorioChange()" md-no-asterisk>
+                    <md-option ng-repeat="Relatorio in RelatorioAcompanhamentoDiarioModel.RelatorioAcompanhamentoDiario" ng-value="Relatorio" ng-selected="RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Name == Relatorio.Name">
+                        {{Relatorio.Name}}
+                    </md-option>
+                </md-select>
+            </div>
+
+        </md-table-container>
+        <form role='form' name='frmRelatorioAcompanhamentoDiarioModel' novalidate="">
+
+            <md-table-container class="layout-margin">
+
+                <div layout-align="space-between center" layout="row">
+                    <div class="text-menu">
+                        <span class="text-menu">Data Inicial: </span>
+                        <md-datepicker ng-model="RelatorioAcompanhamentoDiarioModel.DthRelatorio" md-placeholder="Enter date" ng-change="RelatorioAcompanhamentoDiarioCtr.dthInicioChange()"></md-datepicker>
+                    </div>
+
+                    <div class="text-menu" layout-align="end center" layout="row">
+                        <span >Refresh</span>
+                        <div>
+                            <md-button class="md-icon-button md-primary" ng-click="RelatorioAcompanhamentoDiarioCtr.btnAtualizaAnalises()">
+                                <md-icon class="material-icons">refresh</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div layout="column" flex="100" flex-xs="100">
+                    <div layout="column" class="aplication-region">
+
+                        <div>
+                            <md-table-container>
+                                <table md-table>
+                                    <thead md-head>
+                                        <tr md-row>
+                                            <th md-column>
+                                                <span>Atributo</span>
+                                            </th>
+                                            <th md-column ng-repeat="Attributes in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Attributes track by $index">
+                                                <span>{{Attributes.Name}}</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                        <tr md-row>
+                                            <td md-cell class="notSelect">
+                                                <span>Tag</span>
+                                            </td>
+                                            <td md-cell ng-repeat="Attributes in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiario.Attributes track by $index" class="notSelect">
+                                                <span>{{Attributes.Value}}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    <!--Average by hour-->
+                                    <tbody md-body>
+                                        <tr md-row ng-repeat="Hora in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiarioDados.Hora track by $index" md-select="gridLigaAlvo">
+                                            <td md-cell class="notSelect">
+                                                <span>{{Hora}}</span>
+                                            </td>
+                                            <td md-cell ng-repeat="Informacao in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiarioDados.Informacao track by $index" class="notSelect">
+                                                <span>{{Informacao.Summary.MediaHoraria[$parent.$index] | number: 2 }}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    <!--Summary-->
+                                    <tbody md-body>
+                                        <tr md-row>
+                                            <td md-cell class="notSelect">
+                                                <span>Média Diária</span>
+                                            </td>
+                                            <td md-cell ng-repeat="Informacao in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiarioDados.Informacao track by $index" class="notSelect">
+                                                <span>{{Informacao.Summary.MediaDiaria | number: 2 }}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tbody md-body>
+                                        <tr md-row>
+                                            <td md-cell class="notSelect">
+                                                <span>Desvio Padrão</span>
+                                            </td>
+                                            <td md-cell ng-repeat="Informacao in RelatorioAcompanhamentoDiarioModel.SelectedRelatorioAcompanhamentoDiarioDados.Informacao track by $index" class="notSelect">
+                                                <span>{{Informacao.Summary.DesvioPadrao | number: 2 }}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+
+
+
+                                </table>
+                            </md-table-container>
+                        </div>
+                    </div>
+                </div>
+
+            </md-table-container>
+
+        </form>
+
+    </md-card>
+</md-content>
